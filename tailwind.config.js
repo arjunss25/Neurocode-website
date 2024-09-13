@@ -15,4 +15,15 @@ module.exports = {
     },
   },
   plugins: [],
+
+
+  theme: {
+    extend: {
+      boxShadow: {
+        'custom-dropshadow': '0px 20px 0px #f1f1f1',
+      },
+    },
+  },
+  plugins: [],
 };
+
