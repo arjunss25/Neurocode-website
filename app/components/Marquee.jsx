@@ -39,7 +39,7 @@ const Marquee = () => {
           initial={{ x: 0 }}
           animate={{ x: "-100%" }}
           transition={{ ease: "linear", repeat: Infinity, duration: 5 }}
-          className="text-[6rem] md:text-[15rem] leading-none font-semibold py-10 px-5"
+          className="marquee-title-home text-[6rem] md:text-[15rem] leading-none font-semibold py-10 px-5"
         >
           NEUROCODE<span className="text-[#e25b4a]">.</span>
         </motion.h1>
@@ -47,7 +47,7 @@ const Marquee = () => {
           initial={{ x: 0 }}
           animate={{ x: "-100%" }}
           transition={{ ease: "linear", repeat: Infinity, duration: 5 }}
-          className="text-[6rem] md:text-[15rem] leading-none font-semibold py-10 flex items-center px-5"
+          className="marquee-title-home text-[6rem] md:text-[15rem] leading-none font-semibold py-10 flex items-center px-5"
         >
           NEUROCODE<span className="text-[#e25b4a]">.</span>
         </motion.h1>

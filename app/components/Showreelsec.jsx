@@ -46,7 +46,7 @@ const Showreelsec = () => {
     )
 
     return (
-        <div ref={containerRef} className="w-full h-[90vh] md:h-screen bg-[#f1f1f1] flex items-center justify-center overflow-hidden">
+        <div ref={containerRef} className="w-full h-[70vh] pb-10 lg:pb-0 md:h-screen bg-[#f1f1f1] flex items-center justify-center overflow-hidden">
             <div data-scroll data-scroll-section data-scroll-speed='-0.6' className="relative w-[100%] md:w-full h-[70%] md:h-full bg-[url('/showreel-img.svg')] bg-cover bg-center">
                 <div className="absolute flex gap-5 top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%]">
                     <Eye />

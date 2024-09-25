@@ -52,7 +52,7 @@ const Contactinfo = () => {
 
   return (
     <div className="w-full h-auto flex flex-col items-center justify-center p-5 lg:p-20">
-      <h1 className=" text-[4rem] lg:text-[6rem] leading-none">Let's talk</h1>
+      <h1 className="text-[4rem] lg:text-[6rem] leading-none">Let&apos;s talk</h1>
 
       <div className="max-w-7xl mx-auto p-4 mt-10 lg:mt-20">
         <div className="flex flex-col md:flex-row gap-8">

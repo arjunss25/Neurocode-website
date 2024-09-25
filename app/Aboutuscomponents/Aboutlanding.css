@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "poppins";
+    src: url("/font/Poppins-SemiBold.ttf");
+}
+
+.main-title-landing{
+    font-family: "poppins";
+}

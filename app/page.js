@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Navbar from "./components/Navbar";
 import Landingpage from "./components/Landingpage";
 import Marquee from "./components/Marquee";
@@ -9,49 +9,79 @@ import Showreelsec from "./components/Showreelsec";
 import Featured from "./components/Featured";
 import Subcompanies from "./components/Subcompanies";
 import Footer from "./components/Footer";
+import dynamic from "next/dynamic";
+import Whatwearedoing from "./components/Whatwearedoing";
+import FAQ from "./components/FAQ";
 
-export default function Home() {
-  const [locomotiveScroll, setLocomotiveScroll] = useState(null);
+const Page = () => {  // Changed 'page' to 'Page'
   const scrollContainerRef = useRef(null);
+  const locomotiveScrollRef = useRef(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      import('locomotive-scroll').then((locomotiveModule) => {
-        const scroll = new locomotiveModule.default({
-          el: scrollContainerRef.current,
-          smooth: true,
-          // other options...
+    const initLocomotiveScroll = () => {
+      if (window.innerWidth >= 1024 && !locomotiveScrollRef.current) {
+        import('locomotive-scroll').then((locomotiveModule) => {
+          locomotiveScrollRef.current = new locomotiveModule.default({
+            el: scrollContainerRef.current,
+            smooth: true,
+          });
         });
+      }
+    };
 
-        setLocomotiveScroll(scroll);
+    const destroyLocomotiveScroll = () => {
+      if (locomotiveScrollRef.current) {
+        locomotiveScrollRef.current.destroy();
+        locomotiveScrollRef.current = null;
+      }
+    };
 
-        return () => {
-          if (scroll) scroll.destroy();
-        };
-      });
+    const handleResize = () => {
+      if (window.innerWidth < 1024) {
+        destroyLocomotiveScroll();
+      } else {
+        initLocomotiveScroll();
+      }
+    };
+
+    // Scroll to top on refresh
+    window.scrollTo(0, 0);
+
+    // Initialize Locomotive Scroll if on desktop
+    if (window.innerWidth >= 1024) {
+      initLocomotiveScroll();
     }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      destroyLocomotiveScroll();
+    };
   }, []);
 
   useEffect(() => {
-    if (locomotiveScroll) {
+    if (locomotiveScrollRef.current) {
       setTimeout(() => {
-        if (locomotiveScroll && typeof locomotiveScroll.update === 'function') {
-          locomotiveScroll.update();
-        }
+        locomotiveScrollRef.current.update();
       }, 500);
     }
-  }, [locomotiveScroll]);
+  });
 
   return (
     <div ref={scrollContainerRef} data-scroll-container>
       <Navbar />
       <Landingpage />
-      <Marquee />
+      {/* <Marquee /> */}
       <About />
       <Showreelsec />
       <Featured />
+      <Whatwearedoing />
+      <FAQ />
       <Subcompanies />
       <Footer />
     </div>
   );
-}
+};
+
+export default dynamic(() => Promise.resolve(Page), { ssr: false });

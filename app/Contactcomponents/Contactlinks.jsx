@@ -15,7 +15,7 @@ const Contactlinks = () => {
             </div>
         </Link>
 
-        <Link href={''} className="card w-[80vw] lg:w-[20vw] h-full bg-zinc-300 rounded-[2rem] p-5 flex flex-col justify-between hover:bg-[#029acd] hover:text-white">
+        <Link href={'https://www.instagram.com/neurocode_intl?igsh=MTN6Mnk5MDIxZTNvbw%3D%3D&utm_source=qr'} className="card w-[80vw] lg:w-[20vw] h-full bg-zinc-300 rounded-[2rem] p-5 flex flex-col justify-between hover:bg-[#029acd] hover:text-white">
             <h1 className="text-[1.5rem]">Intagram</h1>
             <div className="w-full flex justify-end text-[3rem]">
                 <FaInstagram />

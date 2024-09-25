@@ -27,7 +27,7 @@ const Servicesmarquee = () => {
           transition={{ ease: "linear", repeat: Infinity, duration: 5 }}
           className="text-[6rem] md:text-[9rem] leading-none font-semibold py-10 px-5"
         >
-          Let's Work Together<span className="text-[#e25b4a]">.</span>
+         Let&apos;s Work Together<span className="text-[#e25b4a]">.</span>
         </motion.h1>
         <motion.h1
           initial={{ x: 0 }}
@@ -35,7 +35,7 @@ const Servicesmarquee = () => {
           transition={{ ease: "linear", repeat: Infinity, duration: 5 }}
           className="text-[6rem] md:text-[9rem] leading-none font-semibold py-10 flex items-center px-5"
         >
-          Let's Work Together<span className="text-[#e25b4a]">.</span>
+          Let&apos;s Work Together<span className="text-[#e25b4a]">.</span>
         </motion.h1>
       </div>
     </div>

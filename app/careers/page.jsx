@@ -4,6 +4,10 @@
 
 import { useEffect, useState, useRef } from "react";
 import Navbar from "../components/Navbar";
+import Careerslanding from "../Careerscomponents/Careerslanding";
+import Careersdescription from "../Careerscomponents/Careersdescription";
+import Openings from "../Careerscomponents/Openings";
+import Footer from "../components/Footer";
 
 
 export default function Home() {
@@ -20,7 +24,6 @@ export default function Home() {
           locomotiveScrollRef.current = new LocomotiveScroll({
             el: document.querySelector('[data-scroll-container]'),
             smooth: true,
-            // Add any other options you need
           });
         }
       } else if (locomotiveScrollRef.current) {
@@ -55,8 +58,12 @@ export default function Home() {
   }
 
   return (
-    <div className="w-full h-screen bg-[#f1f1f1]" data-scroll-container>
+    <div className="w-full h-auto bg-[#f1f1f1] " data-scroll-container>
       <Navbar/>
+      <Careerslanding/>
+      <Careersdescription/>
+      <Openings/>
+      <Footer/>
 
     </div>
   );

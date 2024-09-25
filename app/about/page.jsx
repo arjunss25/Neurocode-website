@@ -10,6 +10,7 @@ import Taglinesection from "../Aboutuscomponents/Taglinesection";
 import Workculturesection from "../Aboutuscomponents/Workculturesection";
 import Directorsmessage from "../Aboutuscomponents/Directorsmessage";
 import Footer from "../components/Footer";
+import '../globals.css'
 
 export default function About() {
   const [isClient, setIsClient] = useState(false);
